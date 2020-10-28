@@ -38,6 +38,9 @@ derive instance genericAlgorithm :: Generic Algorithm _
 derive instance eqAlgorithm :: Eq Algorithm
 instance showAlgorithm :: Show Algorithm where show = genericShow
 
+algorithmToInternal :: Algorithm -> String
+algorithmToInternal = show
+
 data Typ
   = JWT
 
