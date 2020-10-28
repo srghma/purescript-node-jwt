@@ -1,6 +1,6 @@
-{ name = "node-jwt"
+{ name = "jsonwebtoken"
 , license = "MIT"
-, repository = "https://github.com/gaku-sei/purescript-node-jwt"
+, repository = "https://github.com/srghma/purescript-jsonwebtoken"
 , dependencies =
   [ "aff"
   , "aff-promise"

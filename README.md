@@ -1,3 +1,3 @@
-# purescript-node-jwt
+# purescript-jsonwebtoken
 
 TODO: sign, decode
