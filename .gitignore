@@ -9,3 +9,5 @@
 /.psa*
 /.spago
 /.vscode
+/yarn.lock
+/bower.json

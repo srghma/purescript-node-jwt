@@ -11,6 +11,10 @@
   , "newtype"
   , "psci-support"
   , "options"
+  , "js-date"
+  , "argonaut"
+  , "codec-argonaut"
+  , "nullable"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs" ]
