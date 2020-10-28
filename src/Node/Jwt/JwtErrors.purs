@@ -35,3 +35,6 @@ errorToJwtErrors error =
     , TokenExpiredError.fromError error <#> JwtErrors__TokenExpiredError
     , NotBeforeError.fromError error <#> JwtErrors__NotBeforeError
     ]
+
+catchJwtErrors :: ∀ t20 t23. Functor t20 ⇒ MonadError Error t20 ⇒ t20 t23 → t20 (Either JwtErrors t23)
+catchJwtErrors = map (lmap errorToJwtErrors) <<< try

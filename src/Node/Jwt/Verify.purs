@@ -64,16 +64,16 @@ verifyComplete
   :: String
   -> SecretOrPublicKey
   -> VerifyOptions
-  -> Aff (Either JwtErrors Json)
-verifyComplete = \token secretOrPublicKey verifyOptions -> map (lmap errorToJwtErrors) $ try $ fromEffectFnAff $ runFn4 _verify true token secretOrPublicKey (verifyOptionsToVerifyOptionsInternal verifyOptions)
+  -> Aff Json
+verifyComplete = \token secretOrPublicKey verifyOptions -> fromEffectFnAff $ runFn4 _verify true token secretOrPublicKey (verifyOptionsToVerifyOptionsInternal verifyOptions)
 
 -- returns payload
 verify
   :: String
   -> SecretOrPublicKey
   -> VerifyOptions
-  -> Aff (Either JwtErrors Json)
-verify = \token secretOrPublicKey verifyOptions -> map (lmap errorToJwtErrors) $ try $ fromEffectFnAff $ runFn4 _verify false token secretOrPublicKey (verifyOptionsToVerifyOptionsInternal verifyOptions)
+  -> Aff Json
+verify = \token secretOrPublicKey verifyOptions -> fromEffectFnAff $ runFn4 _verify false token secretOrPublicKey (verifyOptionsToVerifyOptionsInternal verifyOptions)
 
 verifyOptionsToVerifyOptionsInternal :: VerifyOptions -> VerifyOptionsInternal
 verifyOptionsToVerifyOptionsInternal verifyOptions =
